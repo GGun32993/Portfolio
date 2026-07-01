@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -32,6 +33,7 @@
             </a>
             <div class="nav-links">
                 <a href="#about" class="nav-link" data-text="เกี่ยวกับ">เกี่ยวกับ</a>
+                <a href="#education" class="nav-link" data-text="การศึกษา">การศึกษา</a>
                 <a href="#skills" class="nav-link" data-text="ทักษะ">ทักษะ</a>
                 <a href="#projects" class="nav-link" data-text="โปรเจกต์">โปรเจกต์</a>
                 <a href="#contact" class="nav-link" data-text="ติดต่อ">ติดต่อ</a>
@@ -45,6 +47,7 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <a href="#about" class="mobile-link">เกี่ยวกับ</a>
+        <a href="#education" class="mobile-link">การศึกษา</a>
         <a href="#skills" class="mobile-link">ทักษะ</a>
         <a href="#projects" class="mobile-link">โปรเจกต์</a>
         <a href="#contact" class="mobile-link">ติดต่อ</a>
@@ -133,13 +136,10 @@
 
                 <div class="about-text reveal" style="animation-delay: 0.1s">
                     <p>
-                        ผม <strong>กันตินันท์ เพ็ญมงคล (กันต์)</strong> นักศึกษาหลักสูตรวิทยาการคอมพิวเตอร์ (Computer Science) มหาวิทยาลัยสวนดุสิต มีความสนใจและมุ่งมั่นศึกษาพัฒนาทักษะด้านการออกแบบ <strong>ระบบโครงสร้างพื้นฐานคอมพิวเตอร์ (Infrastructure)</strong>, การจัดการ <strong>ระบบอัตโนมัติ (Automation)</strong> และ <strong>ความปลอดภัยของระบบเครือข่าย (Network Security)</strong>
+                        ผม <strong>กันตินันท์ เพ็ญมงคล (กันต์)</strong> นักศึกษาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยสวนดุสิต มุ่งเน้นด้าน <strong>Infrastructure</strong>, <strong>Network Security</strong> และ <strong>Automation</strong> โดยเชื่อมั่นในแนวคิด <strong>Infrastructure as Code</strong> เพื่อให้ระบบมีความน่าเชื่อถือและรองรับสเกลได้อย่างมีประสิทธิภาพ
                     </p>
                     <p>
-                        มีความเชื่อมั่นในแนวคิดการจัดการโครงสร้างพื้นฐานด้วยโค้ด (Infrastructure as Code) เพื่อควบคุมการสร้างซ้ำ ตรวจสอบความถูกต้อง และรองรับสเกลงานระบบคอมพิวเตอร์ได้อย่างมีประสิทธิภาพและปลอดภัย
-                    </p>
-                    <p>
-                        นอกจากนี้ ยังมีความเชี่ยวชาญและประสบการณ์ในการบริหารจัดการระบบ <strong>IT Administration & Technical Support</strong> ครอบคลุมการดูแลระบบควบคุมผู้ใช้ด้วย <strong>Active Directory (AD & GPO)</strong>, การบริหารจัดการคลาวด์องค์กรอย่าง <strong>Microsoft 365 และ Google Workspace</strong>, การติดตั้งระบบปฏิบัติการคราวละหลายเครื่องผ่านเครือข่าย (OS Deployment - PXE/Clonezilla), การซ่อมประกอบและบำรุงรักษาอุปกรณ์ฮาร์ดแวร์คอมพิวเตอร์ ตลอดจนการให้บริการรับและดำเนินเรื่องแก้ไขปัญหาผ่านระบบ Ticketing System เพื่อคอยประสานงานและดูแลความต่อเนื่องของระบบไอทีในองค์กรได้อย่างยั่งยืน
+                        มีประสบการณ์ด้าน <strong>IT Administration & Support</strong> ครอบคลุม Active Directory, Microsoft 365, Google Workspace, OS Deployment, การซ่อมบำรุงฮาร์ดแวร์ และระบบ Ticketing Support
                     </p>
                 </div>
                 <div class="about-stats reveal" style="animation-delay: 0.15s">
@@ -163,11 +163,43 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section class="section section-alt" id="education">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">02 // EDUCATION</span>
+                <h2 class="section-title">ประวัติการศึกษา</h2>
+            </div>
+            <div class="edu-grid">
+                <!-- University -->
+                <div class="edu-card reveal">
+                    <div class="edu-icon-box">🎓</div>
+                    <div class="edu-info">
+                        <h3 class="edu-school">มหาวิทยาลัยสวนดุสิต</h3>
+                        <span class="edu-degree">Bachelor of Science</span>
+                        <span class="edu-major">Major: Computer Science</span>
+                        <span class="edu-years">2022 - Present</span>
+                    </div>
+                </div>
+                <!-- High School -->
+                <div class="edu-card reveal" style="animation-delay: 0.1s">
+                    <div class="edu-icon-box">🎓</div>
+                    <div class="edu-info">
+                        <h3 class="edu-school">โรงเรียนสุราษฎร์พิทยา</h3>
+                        <span class="edu-degree">High School Diploma</span>
+                        <span class="edu-major">Mathematics - English Program</span>
+                        <span class="edu-years">2016 - 2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section class="section section-alt" id="skills">
         <div class="section-inner">
             <div class="section-header reveal">
-                <span class="section-tag font-mono">02 // SKILLS</span>
+                <span class="section-tag font-mono">03 // SKILLS</span>
                 <h2 class="section-title">ทักษะและเทคโนโลยี</h2>
             </div>
             <div class="skills-grid">
