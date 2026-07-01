@@ -889,6 +889,10 @@ strong {
 /* ==========================================
    Contact Section
    ========================================== */
+#contact.section {
+    padding-bottom: 3.5rem;
+}
+
 .contact-content {
     text-align: center;
 }
@@ -915,12 +919,19 @@ strong {
     text-align: center;
     transition: var(--transition);
     cursor: pointer;
+    text-decoration: none;
 }
 
 .contact-card:hover {
     border-color: var(--accent);
     transform: translateY(-6px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-color: var(--accent);
 }
 
 .contact-card-icon {
@@ -939,7 +950,7 @@ strong {
 
 .contact-card-value {
     font-size: 0.78rem;
-    color: var(--text-muted);
+    color: var(--text);
 }
 
 @media (max-width: 768px) {
