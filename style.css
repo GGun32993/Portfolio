@@ -251,13 +251,15 @@ strong {
 .hero {
     position: relative;
     z-index: 2;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     padding-top: calc(var(--nav-height) + 2rem);
+    overflow: hidden;
 }
 
 .hero-content {
@@ -455,7 +457,7 @@ strong {
 
 /* Scroll Indicator */
 .scroll-indicator {
-    position: fixed;
+    position: absolute;
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
@@ -463,14 +465,7 @@ strong {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    z-index: 10;
-    opacity: 1;
-    transition: opacity 0.4s ease;
     pointer-events: none;
-}
-
-.scroll-indicator.hidden {
-    opacity: 0;
 }
 
 .scroll-mouse {

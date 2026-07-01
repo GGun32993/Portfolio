@@ -76,23 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Navigation Scroll Effect
     // ------------------------------------------
     const nav = document.getElementById('nav');
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    const heroSection = document.getElementById('hero');
-
-    // Hide scroll indicator when user scrolls past hero
-    const heroObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (scrollIndicator) {
-                if (entry.isIntersecting) {
-                    scrollIndicator.classList.remove('hidden');
-                } else {
-                    scrollIndicator.classList.add('hidden');
-                }
-            }
-        });
-    }, { threshold: 0.1 });
-
-    if (heroSection) heroObserver.observe(heroSection);
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
