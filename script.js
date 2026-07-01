@@ -76,12 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Navigation Scroll Effect
     // ------------------------------------------
     const nav = document.getElementById('nav');
+    const scrollIndicator = document.querySelector('.scroll-indicator');
 
     window.addEventListener('scroll', () => {
+        // Nav scroll class
         if (window.scrollY > 50) {
             nav.classList.add('scrolled');
         } else {
             nav.classList.remove('scrolled');
+        }
+
+        // Fade out scroll indicator as user scrolls
+        if (scrollIndicator) {
+            const fadeStart = 50;
+            const fadeEnd = 300;
+            const opacity = Math.max(0, 1 - (window.scrollY - fadeStart) / (fadeEnd - fadeStart));
+            scrollIndicator.style.opacity = opacity;
         }
     });
 
