@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guntinan Penmongkon | System & Network Engineer</title>
+    <meta name="description"
+        content="Portfolio ของ Guntinan Penmongkon — System & Network Engineer ผู้เชี่ยวชาญด้าน Infrastructure as Code, Network Security และ Automation">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Dot Grid Background -->
+    <div class="dot-grid"></div>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">Portfolio</span>
+                <span class="logo-bracket">}</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link" data-text="เกี่ยวกับ">เกี่ยวกับ</a>
+                <a href="#skills" class="nav-link" data-text="ทักษะ">ทักษะ</a>
+                <a href="#projects" class="nav-link" data-text="โปรเจกต์">โปรเจกต์</a>
+                <a href="#contact" class="nav-link" data-text="ติดต่อ">ติดต่อ</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link">เกี่ยวกับ</a>
+        <a href="#skills" class="mobile-link">ทักษะ</a>
+        <a href="#projects" class="mobile-link">โปรเจกต์</a>
+        <a href="#contact" class="mobile-link">ติดต่อ</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge animate-in">
+                <span class="status-dot"></span>
+                <span class="font-mono text-xs">AVAILABLE FOR WORK</span>
+            </div>
+            <h1 class="hero-title animate-in" style="animation-delay: 0.1s">
+                <span class="hero-greeting">สวัสดีครับ, ผมชื่อกันตินันท์ เพ็ญมงคล</span>
+                <span class="hero-name">Guntinan Penmongkon</span>
+            </h1>
+            <p class="hero-role animate-in" style="animation-delay: 0.2s">
+                <span class="typed-text" id="typedText"></span>
+                <span class="cursor-blink">|</span>
+            </p>
+            <p class="hero-desc animate-in" style="animation-delay: 0.3s">
+                นักศึกษาหลักสูตรวิทยาการคอมพิวเตอร์ มหาวิทยาลัยสวนดุสิต<br>
+                มุ่งเน้นการออกแบบสถาปัตยกรรมเครือข่าย ความปลอดภัยระบบสารสนเทศ และการทำงานแบบอัตโนมัติ (Automation)
+            </p>
+            <div class="hero-actions animate-in" style="animation-delay: 0.4s">
+                <a href="#projects" class="btn btn-primary">
+                    <span>ดูผลงาน</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost">
+                    <span>Contact Me</span>
+                </a>
+            </div>
+            <div class="hero-terminal animate-in" style="animation-delay: 0.5s">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">terminal</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-cmd">whoami</span>
+                    </div>
+                    <div class="terminal-output">system-engineer</div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-cmd">cat skills.txt</span>
+                    </div>
+                    <div class="terminal-output">Vagrant, Ansible, WireGuard, Linux, Nginx, PostgreSQL</div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-cmd">echo $STATUS</span>
+                    </div>
+                    <div class="terminal-output" style="color: #10b981;">พร้อมทำงาน ✓</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator animate-in" style="animation-delay: 0.7s">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="font-mono text-xs" style="color: var(--text-muted);">SCROLL</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">01 // ABOUT</span>
+                <h2 class="section-title">เกี่ยวกับผม</h2>
+            </div>
+            <div class="about-grid">
+                <!-- Profile Image -->
+                <div class="about-image-wrapper reveal">
+                    <img src="profile.png" alt="Guntinan Penmongkon" class="about-img">
+                </div>
+
+                <div class="about-text reveal" style="animation-delay: 0.1s">
+                    <p>
+                        ผม <strong>กันตินันท์ เพ็ญมงคล (กันต์)</strong> นักศึกษาหลักสูตรวิทยาการคอมพิวเตอร์ (Computer Science) มหาวิทยาลัยสวนดุสิต มีความสนใจและมุ่งมั่นศึกษาพัฒนาทักษะด้านการออกแบบ <strong>ระบบโครงสร้างพื้นฐานคอมพิวเตอร์ (Infrastructure)</strong>, การจัดการ <strong>ระบบอัตโนมัติ (Automation)</strong> และ <strong>ความปลอดภัยของระบบเครือข่าย (Network Security)</strong>
+                    </p>
+                    <p>
+                        มีความเชื่อมั่นในแนวคิดการจัดการโครงสร้างพื้นฐานด้วยโค้ด (Infrastructure as Code) เพื่อควบคุมการสร้างซ้ำ ตรวจสอบความถูกต้อง และรองรับสเกลงานระบบคอมพิวเตอร์ได้อย่างมีประสิทธิภาพและปลอดภัย
+                    </p>
+                    <p>
+                        นอกจากนี้ ยังมีความเชี่ยวชาญและประสบการณ์ในการบริหารจัดการระบบ <strong>IT Administration & Technical Support</strong> ครอบคลุมการดูแลระบบควบคุมผู้ใช้ด้วย <strong>Active Directory (AD & GPO)</strong>, การบริหารจัดการคลาวด์องค์กรอย่าง <strong>Microsoft 365 และ Google Workspace</strong>, การติดตั้งระบบปฏิบัติการคราวละหลายเครื่องผ่านเครือข่าย (OS Deployment - PXE/Clonezilla), การซ่อมประกอบและบำรุงรักษาอุปกรณ์ฮาร์ดแวร์คอมพิวเตอร์ ตลอดจนการให้บริการรับและดำเนินเรื่องแก้ไขปัญหาผ่านระบบ Ticketing System เพื่อคอยประสานงานและดูแลความต่อเนื่องของระบบไอทีในองค์กรได้อย่างยั่งยืน
+                    </p>
+                </div>
+                <div class="about-stats reveal" style="animation-delay: 0.15s">
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="3">0</div>
+                        <div class="stat-label">เซิร์ฟเวอร์ที่จัดการ<br><span class="font-mono text-xs">MANAGED
+                                SERVERS</span></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="8">0</div>
+                        <div class="stat-label">เทคโนโลยีที่ใช้งาน<br><span
+                                class="font-mono text-xs">TECHNOLOGIES</span></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-count="2">0</div>
+                        <div class="stat-label">โปรเจกต์ที่ทำเสร็จ<br><span class="font-mono text-xs">COMPLETED
+                                PROJECTS</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-alt" id="skills">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">02 // SKILLS</span>
+                <h2 class="section-title">ทักษะและเทคโนโลยี</h2>
+            </div>
+            <div class="skills-grid">
+                <!-- 1. Network & Security -->
+                <div class="skill-group reveal">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">🔐</div>
+                        <h3 class="skill-group-title">NETWORK & SECURITY</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">WireGuard VPN</span>
+                        <span class="skill-tag-pill">TCP/IP</span>
+                        <span class="skill-tag-pill">NAT / Routing</span>
+                        <span class="skill-tag-pill">iptables</span>
+                        <span class="skill-tag-pill">UFW Firewall</span>
+                        <span class="skill-tag-pill">DNS / DHCP</span>
+                        <span class="skill-tag-pill">Static Routing</span>
+                    </div>
+                </div>
+
+                <!-- 2. Infrastructure -->
+                <div class="skill-group reveal" style="animation-delay: 0.1s">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">⚙️</div>
+                        <h3 class="skill-group-title">INFRASTRUCTURE</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">Linux Server Administration</span>
+                        <span class="skill-tag-pill">Vagrant</span>
+                        <span class="skill-tag-pill">Ansible</span>
+                        <span class="skill-tag-pill">Docker</span>
+                        <span class="skill-tag-pill">VirtualBox</span>
+                        <span class="skill-tag-pill">Bash / Shell</span>
+                    </div>
+                </div>
+
+                <!-- 3. Backend (Freelance Project) -->
+                <div class="skill-group reveal" style="animation-delay: 0.2s">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">🗄️</div>
+                        <h3 class="skill-group-title">BACKEND</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">NodeJS</span>
+                        <span class="skill-tag-pill">ExpressJS</span>
+                        <span class="skill-tag-pill">REST API</span>
+                        <span class="skill-tag-pill">JWT Auth</span>
+                        <span class="skill-tag-pill">PrismaORM</span>
+                    </div>
+                </div>
+
+                <!-- 4. Frontend (Freelance Project) -->
+                <div class="skill-group reveal" style="animation-delay: 0.3s">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">🌐</div>
+                        <h3 class="skill-group-title">FRONTEND</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">React</span>
+                        <span class="skill-tag-pill">TailwindCSS</span>
+                        <span class="skill-tag-pill">HTML5</span>
+                        <span class="skill-tag-pill">CSS3</span>
+                        <span class="skill-tag-pill">JavaScript (ES6)</span>
+                    </div>
+                </div>
+
+                <!-- 5. Database -->
+                <div class="skill-group reveal" style="animation-delay: 0.4s">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">📊</div>
+                        <h3 class="skill-group-title">DATABASE</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">PostgreSQL</span>
+                        <span class="skill-tag-pill">MySQL</span>
+                        <span class="skill-tag-pill">SQLite</span>
+                    </div>
+                </div>
+
+                <!-- 6. Computer Languages -->
+                <div class="skill-group reveal" style="animation-delay: 0.5s">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">💻</div>
+                        <h3 class="skill-group-title">COMPUTER LANGUAGES</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">JavaScript</span>
+                        <span class="skill-tag-pill">SQL</span>
+                        <span class="skill-tag-pill">Python</span>
+                        <span class="skill-tag-pill">Bash</span>
+                    </div>
+                </div>
+
+                <!-- 7. IT Administration & Support -->
+                <div class="skill-group reveal" style="animation-delay: 0.6s">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">🖥️</div>
+                        <h3 class="skill-group-title">IT ADMIN & SUPPORT</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">Active Directory & GPO</span>
+                        <span class="skill-tag-pill">M365 & Google Workspace</span>
+                        <span class="skill-tag-pill">IT Helpdesk & Ticket Support</span>
+                        <span class="skill-tag-pill">OS Deployment & Imaging</span>
+                        <span class="skill-tag-pill">Hardware & PC Maintenance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">03 // PROJECTS</span>
+                <h2 class="section-title">โปรเจกต์ที่โดดเด่น</h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal">
+                    <div class="project-card-image-wrapper">
+                        <div class="project-card-header-bg">
+                            <svg class="project-card-github-logo" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="project-card-github-title">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Secure Hybrid Infrastructure IaC</h3>
+                        <p class="project-card-desc">
+                            ระบบโครงสร้างพื้นฐานเครือข่ายความปลอดภัยสูงจำลอง 3 เซิร์ฟเวอร์ภายใน สร้างคอนฟิกอัตโนมัติด้วยโค้ด (IaC) พร้อมระบบมอนิเตอร์ด้วย Prometheus และ Grafana
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Vagrant</span>
+                            <span class="project-card-tag">Ansible</span>
+                            <span class="project-card-tag">WireGuard</span>
+                            <span class="project-card-tag">Prometheus</span>
+                            <span class="project-card-tag">Grafana</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/ggun32993/Secure-Hybrid-Infrastructure-IaC" target="_blank" class="project-card-link">
+                                <span>View Project</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal" style="animation-delay: 0.1s">
+                    <div class="project-card-image-wrapper">
+                        <div class="project-card-header-bg">
+                            <svg class="project-card-github-logo" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="project-card-github-title">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Freelance Matching Online</h3>
+                        <p class="project-card-desc">
+                            แพลตฟอร์มหางานและจ้างงานสำหรับฟรีแลนซ์ ประมวลผลฝั่งเซิร์ฟเวอร์ด้วย PHP ค้นหาพิกัดด้วย Leaflet และ Geoapify API
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">PHP</span>
+                            <span class="project-card-tag">MySQL</span>
+                            <span class="project-card-tag">Leaflet Map</span>
+                            <span class="project-card-tag">Geoapify API</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/ggun32993/JobFind_Project" target="_blank" class="project-card-link">
+                                <span>View Code</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                            <a href="https://jobfindprojectggun.42web.io/" target="_blank" class="project-card-link">
+                                <span>Live Demo</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-alt" id="contact">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">04 // CONTACT</span>
+                <h2 class="section-title">ติดต่อ</h2>
+            </div>
+            <div class="contact-content reveal">
+                <p class="contact-desc">
+                    หากคุณกำลังมองหาผู้ร่วมงานที่มุ่งมั่น หรือต้องการแลกเปลี่ยนพูดคุยในด้านเทคโนโลยี<br>
+                    ระบบเครือข่าย (Networking), การพัฒนาซอฟต์แวร์ (Software Development) หรือความปลอดภัยสารสนเทศ<br>
+                    สามารถติดต่อสอบถามรายละเอียดเพิ่มเติมได้ ยินดีให้บริการครับ
+                </p>
+                <div class="contact-cards">
+                    <a href="mailto:guntinan.penmongkon@gmail.com" class="contact-card">
+                        <div class="contact-card-icon">✉️</div>
+                        <div class="contact-card-label">Email</div>
+                        <div class="contact-card-value font-mono">guntinan.penmongkon@gmail.com</div>
+                    </a>
+                    <a href="https://github.com/ggun32993" target="_blank" class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </div>
+                        <div class="contact-card-label">GitHub</div>
+                        <div class="contact-card-value font-mono">ggun32993</div>
+                    </a>
+                    <a href="tel:0842568211" class="contact-card">
+                        <div class="contact-card-icon">📞</div>
+                        <div class="contact-card-label">โทรศัพท์</div>
+                        <div class="contact-card-value font-mono">084-256-8211</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-line"></div>
+            <div class="footer-content">
+                <span class="font-mono text-xs">ออกแบบและพัฒนาโดย <strong>Guntinan Penmongkon</strong></span>
+                <span class="font-mono text-xs" style="color: var(--text-muted);">
+                    สร้างด้วย <span style="color: var(--accent);">HTML</span> + <span
+                        style="color: var(--accent);">CSS</span> + <span style="color: var(--accent);">JS</span>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
