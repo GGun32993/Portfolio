@@ -134,33 +134,61 @@
                     <img src="profile.png" alt="Guntinan Penmongkon" class="about-img">
                 </div>
 
-                <div class="about-text reveal" style="animation-delay: 0.1s">
-                    <p>
-                        ผม <strong>กันตินันท์ เพ็ญมงคล (กันต์)</strong> นักศึกษาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยสวนดุสิต
-                        มุ่งเน้นด้าน <strong>Infrastructure</strong>, <strong>Network Security</strong> และ
-                        <strong>Automation</strong> โดยเชื่อมั่นในแนวคิด <strong>Infrastructure as Code</strong>
-                        เพื่อให้ระบบมีความน่าเชื่อถือและรองรับสเกลได้อย่างมีประสิทธิภาพ
-                    </p>
-                    <p>
-                        มีความสนใจด้าน <strong>IT Administration & Support</strong> ครอบคลุม Active Directory, Microsoft
-                        365, Google Workspace, OS Deployment, การซ่อมบำรุงฮาร์ดแวร์ และระบบ Ticketing Support
-                    </p>
-                </div>
-                <div class="about-stats reveal" style="animation-delay: 0.15s">
-                    <div class="stat-card">
-                        <div class="stat-number" data-count="3">0</div>
-                        <div class="stat-label">เซิร์ฟเวอร์ที่จัดการ<br><span class="font-mono text-xs">MANAGED
-                                SERVERS</span></div>
+                <!-- Right: Content & Dashboard -->
+                <div class="about-content reveal" style="animation-delay: 0.1s">
+                    <div class="about-text">
+                        <p>
+                            ผม <strong>กันตินันท์ เพ็ญมงคล (กันต์)</strong> นักศึกษาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยสวนดุสิต
+                            มุ่งเน้นด้าน <strong>Infrastructure</strong>, <strong>Network Security</strong> และ
+                            <strong>Automation</strong> โดยเชื่อมั่นในแนวคิด <strong>Infrastructure as Code</strong>
+                            เพื่อให้ระบบมีความน่าเชื่อถือและรองรับสเกลได้อย่างมีประสิทธิภาพ
+                        </p>
+                        <p>
+                            มีความสนใจด้าน <strong>IT Administration & Support</strong> ครอบคลุม Active Directory, Microsoft
+                            365, Google Workspace, OS Deployment, การซ่อมบำรุงฮาร์ดแวร์ และระบบ Ticketing Support
+                        </p>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number" data-count="8">0</div>
-                        <div class="stat-label">เทคโนโลยีที่ใช้งาน<br><span
-                                class="font-mono text-xs">TECHNOLOGIES</span></div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number" data-count="2">0</div>
-                        <div class="stat-label">โปรเจกต์ที่ทำเสร็จ<br><span class="font-mono text-xs">COMPLETED
-                                PROJECTS</span></div>
+
+                    <!-- System Status Dashboard -->
+                    <div class="about-dashboard">
+                        <!-- Card 1 -->
+                        <div class="dash-card">
+                            <div class="dash-header">
+                                <span class="dash-dot green"></span>
+                                <span class="dash-title font-mono">SYS_STATUS</span>
+                            </div>
+                            <div class="dash-body font-mono">
+                                <div class="dash-line"><span class="dash-label">OS:</span> Linux Debian/Ubuntu</div>
+                                <div class="dash-line"><span class="dash-label">Env:</span> Home Lab / Hybrid</div>
+                                <div class="dash-line"><span class="dash-label">Virt:</span> Proxmox, Docker</div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="dash-card">
+                            <div class="dash-header">
+                                <span class="dash-dot green"></span>
+                                <span class="dash-title font-mono">NET_DIAG</span>
+                            </div>
+                            <div class="dash-body font-mono">
+                                <div class="dash-line"><span class="dash-label">VPN:</span> WireGuard [ACTIVE]</div>
+                                <div class="dash-line"><span class="dash-label">DNS:</span> AdGuard Home</div>
+                                <div class="dash-line"><span class="dash-label">Sec:</span> Firewall & NAT</div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="dash-card">
+                            <div class="dash-header">
+                                <span class="dash-dot green"></span>
+                                <span class="dash-title font-mono">AUTO_ENG</span>
+                            </div>
+                            <div class="dash-body font-mono">
+                                <div class="dash-line"><span class="dash-label">IaC:</span> Ansible, Vagrant</div>
+                                <div class="dash-line"><span class="dash-label">Shell:</span> Bash, PowerShell</div>
+                                <div class="dash-line"><span class="dash-label">Git:</span> GitHub Actions</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

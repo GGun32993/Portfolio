@@ -498,7 +498,7 @@ strong {
    ========================================== */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.6fr 1.8fr;
+    grid-template-columns: 1fr 2.5fr;
     gap: 2.5rem;
     align-items: start;
 }
@@ -530,46 +530,80 @@ strong {
     filter: none;
 }
 
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .about-text p {
     color: var(--text-secondary);
     margin-bottom: 1.2rem;
     font-size: 0.95rem;
 }
 
-.about-stats {
+/* System Status Dashboard */
+.about-dashboard {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
-.stat-card {
+.dash-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 1.5rem;
-    text-align: center;
+    padding: 1.25rem;
     transition: var(--transition);
 }
 
-.stat-card:hover {
-    border-color: var(--border-hover);
+.dash-card:hover {
+    border-color: var(--accent);
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px var(--accent-glow);
 }
 
-.stat-number {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 0.5rem;
+.dash-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
 }
 
-.stat-label {
-    font-size: 0.85rem;
+.dash-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.dash-dot.green {
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: blink 2s infinite;
+}
+
+.dash-title {
+    font-size: 0.8rem;
     color: var(--text-secondary);
-    line-height: 1.4;
+    font-weight: 700;
+}
+
+.dash-body {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.dash-line {
+    margin-bottom: 0.25rem;
+}
+
+.dash-label {
+    color: var(--accent);
+    font-weight: 500;
+    margin-right: 0.25rem;
 }
 
 @media (max-width: 768px) {
@@ -579,9 +613,6 @@ strong {
     .about-image-wrapper {
         max-width: 260px;
         margin: 0 auto 1.5rem;
-    }
-    .about-stats {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 
