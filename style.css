@@ -132,6 +132,17 @@ strong {
     font-weight: 700;
     letter-spacing: -0.02em;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.nav-logo-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo-bracket {
