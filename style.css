@@ -730,7 +730,12 @@ strong {
 }
 
 .skill-icon {
-    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    width: 20px;
+    height: 20px;
 }
 
 .skill-group-title {
