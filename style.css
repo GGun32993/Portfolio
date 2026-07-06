@@ -665,6 +665,7 @@ strong {
     background: rgba(245, 158, 11, 0.06);
     border: 1px solid rgba(245, 158, 11, 0.2);
     border-radius: var(--radius-sm);
+    color: var(--amber);
 }
 
 .edu-info {
@@ -815,6 +816,7 @@ strong {
     background: rgba(129, 140, 248, 0.06);
     border: 1px solid rgba(129, 140, 248, 0.2);
     border-radius: var(--radius-sm);
+    color: var(--accent);
 }
 
 .cert-info {
