@@ -843,6 +843,21 @@ strong {
     margin-top: 0.15rem;
 }
 
+.cert-link {
+    font-size: 0.72rem;
+    color: var(--accent);
+    margin-top: 0.35rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: var(--transition);
+    align-self: flex-start;
+}
+
+.cert-link:hover {
+    color: #fff;
+}
+
 @media (max-width: 768px) {
     .certificates-grid {
         grid-template-columns: 1fr;
