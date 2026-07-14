@@ -27,31 +27,79 @@ document.addEventListener('DOMContentLoaded', () => {
         splashParticles.appendChild(p);
     }
 
-    // Animate boot sequence lines
+    // --- Pre-render all prompt labels so they don't shift ---
     const lines = splashTerminal.querySelectorAll('.splash-line');
-    lines.forEach(line => {
-        const delay = parseInt(line.getAttribute('data-delay')) || 0;
-        setTimeout(() => {
-            line.classList.add('show');
-        }, delay);
+    lines.forEach(lineEl => {
+        const promptSpan = document.createElement('span');
+        promptSpan.className = 's-prompt';
+        promptSpan.textContent = lineEl.dataset.prompt;
+
+        const textSpan = document.createElement('span');
+        textSpan.className = 's-text';
+
+        lineEl.appendChild(promptSpan);
+        lineEl.appendChild(textSpan);
     });
 
-    // Show INITIALIZE button after boot sequence completes
-    const lastDelay = parseInt(lines[lines.length - 1].getAttribute('data-delay')) || 0;
-    setTimeout(() => {
-        splashBtn.classList.add('show');
-    }, lastDelay + 600);
+    // --- Typewriter: type only the text part ---
+    function typewriterLine(lineEl) {
+        return new Promise(resolve => {
+            const text = lineEl.dataset.text;
+            const suffix = lineEl.dataset.suffix || '';
+            const suffixClass = lineEl.dataset.suffixClass || '';
+            const textSpan = lineEl.querySelector('.s-text');
 
-    // Handle enter click
+            // Add blinking cursor
+            const cursor = document.createElement('span');
+            cursor.className = 's-cursor';
+            lineEl.appendChild(cursor);
+
+            let i = 0;
+            const speed = 25;
+            function type() {
+                if (i < text.length) {
+                    textSpan.textContent += text[i];
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    if (suffix) {
+                        const suffixSpan = document.createElement('span');
+                        suffixSpan.className = suffixClass;
+                        suffixSpan.textContent = suffix;
+                        textSpan.appendChild(suffixSpan);
+                    }
+                    cursor.classList.add('done');
+                    resolve();
+                }
+            }
+            type();
+        });
+    }
+
+    // Run boot lines sequentially with a small pause between each
+    async function runBootSequence() {
+        for (const line of lines) {
+            await new Promise(r => setTimeout(r, 200));
+            await typewriterLine(line);
+        }
+        setTimeout(() => {
+            splashBtn.classList.add('show');
+        }, 400);
+    }
+
+    runBootSequence();
+
+    // --- Clean fade-out exit ---
     splashBtn.addEventListener('click', () => {
-        splash.classList.add('hidden');
+        splash.classList.add('exit');
         document.body.classList.remove('splash-active');
 
-        // Remove splash from DOM after transition
         setTimeout(() => {
             splash.remove();
-        }, 900);
+        }, 700);
     });
+
+
 
     // ------------------------------------------
     // 1. Typing Animation (Hero Section)

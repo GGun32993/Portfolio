@@ -56,26 +56,11 @@
 
             <!-- Boot sequence terminal -->
             <div class="splash-terminal" id="splashTerminal">
-                <div class="splash-line" data-delay="200">
-                    <span class="s-prompt">BIOS</span>
-                    <span class="s-text">System check... <span class="s-ok">OK</span></span>
-                </div>
-                <div class="splash-line" data-delay="600">
-                    <span class="s-prompt">BOOT</span>
-                    <span class="s-text">Loading kernel modules... <span class="s-ok">OK</span></span>
-                </div>
-                <div class="splash-line" data-delay="1000">
-                    <span class="s-prompt">NET</span>
-                    <span class="s-text">Initializing network interfaces... <span class="s-ok">OK</span></span>
-                </div>
-                <div class="splash-line" data-delay="1400">
-                    <span class="s-prompt">AUTH</span>
-                    <span class="s-text">Authenticating user <span class="s-highlight">guest@portfolio</span>... <span class="s-ok">GRANTED</span></span>
-                </div>
-                <div class="splash-line" data-delay="1800">
-                    <span class="s-prompt">SYS</span>
-                    <span class="s-text">All services operational. Welcome.</span>
-                </div>
+                <div class="splash-line" data-delay="300" data-prompt="BIOS" data-text="System check... " data-suffix="OK" data-suffix-class="s-ok"></div>
+                <div class="splash-line" data-delay="1200" data-prompt="BOOT" data-text="Loading kernel modules... " data-suffix="OK" data-suffix-class="s-ok"></div>
+                <div class="splash-line" data-delay="2100" data-prompt="NET" data-text="Initializing network interfaces... " data-suffix="OK" data-suffix-class="s-ok"></div>
+                <div class="splash-line" data-delay="3200" data-prompt="AUTH" data-text="Authenticating user guest@portfolio... " data-suffix="GRANTED" data-suffix-class="s-ok"></div>
+                <div class="splash-line" data-delay="4400" data-prompt="SYS" data-text="All services operational. Welcome."></div>
             </div>
 
             <!-- CTA Button -->
