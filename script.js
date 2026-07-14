@@ -15,16 +15,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lock body scroll while splash is visible
     document.body.classList.add('splash-active');
 
-    // Generate floating particles
+    // Generate floating particles (Faster rise & quicker start)
     for (let i = 0; i < 30; i++) {
         const p = document.createElement('div');
         p.classList.add('splash-particle');
         p.style.left = Math.random() * 100 + '%';
-        p.style.animationDuration = (4 + Math.random() * 6) + 's';
-        p.style.animationDelay = Math.random() * 5 + 's';
+        p.style.animationDuration = (2 + Math.random() * 3) + 's';
+        p.style.animationDelay = Math.random() * 3 + 's';
         p.style.width = (1 + Math.random() * 2) + 'px';
         p.style.height = p.style.width;
         splashParticles.appendChild(p);
+    }
+
+    // Generate portfolio floating particles (gentle float for main page)
+    const portfolioParticles = document.getElementById('portfolioParticles');
+    if (portfolioParticles) {
+        for (let i = 0; i < 40; i++) {
+            const p = document.createElement('div');
+            p.classList.add('portfolio-particle');
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDuration = (6 + Math.random() * 8) + 's';
+            p.style.animationDelay = Math.random() * 8 + 's';
+            p.style.width = (1 + Math.random() * 2) + 'px';
+            p.style.height = p.style.width;
+            portfolioParticles.appendChild(p);
+        }
     }
 
     // --- Pre-render all prompt labels so they don't shift ---

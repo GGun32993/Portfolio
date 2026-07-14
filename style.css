@@ -18,10 +18,12 @@ body.splash-active {
     align-items: center;
     justify-content: center;
     opacity: 1;
-    transition: opacity 0.6s ease;
+    clip-path: circle(150% at 50% 50%);
+    transition: clip-path 0.9s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.8s ease;
 }
 
 .splash.exit {
+    clip-path: circle(0% at 50% 50%);
     opacity: 0;
     pointer-events: none;
 }
@@ -86,6 +88,12 @@ body.splash-active {
     padding: 2rem;
     width: 100%;
     max-width: 540px;
+    transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.6s ease;
+}
+
+.splash.exit .splash-content {
+    transform: scale(0.85);
+    opacity: 0;
 }
 
 /* Portfolio Logo */
@@ -96,6 +104,7 @@ body.splash-active {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-bottom: 2rem; /* Added space between logo and bios boot terminal */
 }
 
 @keyframes splashLogoIn {
@@ -320,7 +329,7 @@ body.splash-active {
     --text-secondary: #a1a1aa;
     --text-muted: #52525b;
     --accent: #818cf8;
-    --accent-glow: rgba(129, 140, 248, 0.15);
+    --accent-glow: rgba(129, 140, 248, 0.08);
     --accent-2: #a78bfa;
     --green: #34d399;
     --green-glow: rgba(52, 211, 153, 0.2);
@@ -417,10 +426,47 @@ strong {
     border-radius: 50%;
     background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
     pointer-events: none;
-    z-index: 1;
+    z-index: 10000; /* Set above splash screen so mouse light shows on cover too */
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.4s ease;
+}
+
+/* ==========================================
+   Portfolio Particles
+   ========================================== */
+.portfolio-particles {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1; /* Sits above background/dot-grid, below content/nav */
+}
+
+.portfolio-particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(129, 140, 248, 0.25);
+    border-radius: 50%;
+    animation: portfolioParticleFloat linear infinite;
+}
+
+@keyframes portfolioParticleFloat {
+    0% {
+        transform: translateY(105vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-5vh) scale(1);
+        opacity: 0;
+    }
 }
 
 /* ==========================================
