@@ -5,6 +5,55 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ------------------------------------------
+    // 0. Splash / Cover Screen
+    // ------------------------------------------
+    const splash = document.getElementById('splash');
+    const splashBtn = document.getElementById('splashBtn');
+    const splashTerminal = document.getElementById('splashTerminal');
+    const splashParticles = document.getElementById('splashParticles');
+
+    // Lock body scroll while splash is visible
+    document.body.classList.add('splash-active');
+
+    // Generate floating particles
+    for (let i = 0; i < 30; i++) {
+        const p = document.createElement('div');
+        p.classList.add('splash-particle');
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDuration = (4 + Math.random() * 6) + 's';
+        p.style.animationDelay = Math.random() * 5 + 's';
+        p.style.width = (1 + Math.random() * 2) + 'px';
+        p.style.height = p.style.width;
+        splashParticles.appendChild(p);
+    }
+
+    // Animate boot sequence lines
+    const lines = splashTerminal.querySelectorAll('.splash-line');
+    lines.forEach(line => {
+        const delay = parseInt(line.getAttribute('data-delay')) || 0;
+        setTimeout(() => {
+            line.classList.add('show');
+        }, delay);
+    });
+
+    // Show INITIALIZE button after boot sequence completes
+    const lastDelay = parseInt(lines[lines.length - 1].getAttribute('data-delay')) || 0;
+    setTimeout(() => {
+        splashBtn.classList.add('show');
+    }, lastDelay + 600);
+
+    // Handle enter click
+    splashBtn.addEventListener('click', () => {
+        splash.classList.add('hidden');
+        document.body.classList.remove('splash-active');
+
+        // Remove splash from DOM after transition
+        setTimeout(() => {
+            splash.remove();
+        }, 900);
+    });
+
+    // ------------------------------------------
     // 1. Typing Animation (Hero Section)
     // ------------------------------------------
     const roles = [

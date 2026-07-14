@@ -1,6 +1,288 @@
 /* ==========================================
    CSS Variables & Design Tokens
    ========================================== */
+
+/* ==========================================
+   Splash / Cover Screen
+   ========================================== */
+body.splash-active {
+    overflow: hidden;
+}
+
+.splash {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #030305;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.8s;
+}
+
+.splash.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* CRT scanline overlay */
+.splash-scanline {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.08) 2px,
+        rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Floating particles container */
+.splash-particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.splash-particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(129, 140, 248, 0.4);
+    border-radius: 50%;
+    animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+    }
+}
+
+.splash-content {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* Hex Logo */
+.splash-logo {
+    opacity: 0;
+    transform: scale(0.6);
+    animation: splashLogoIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+@keyframes splashLogoIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.splash-hex {
+    width: 100px;
+    height: 120px;
+    filter: drop-shadow(0 0 20px rgba(129, 140, 248, 0.3));
+    animation: hexPulse 3s ease-in-out infinite;
+}
+
+@keyframes hexPulse {
+    0%, 100% { filter: drop-shadow(0 0 20px rgba(129, 140, 248, 0.3)); }
+    50% { filter: drop-shadow(0 0 40px rgba(129, 140, 248, 0.6)); }
+}
+
+/* Boot sequence terminal */
+.splash-terminal {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    max-width: 500px;
+    width: 100%;
+}
+
+.splash-line {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    font-size: 0.82rem;
+    line-height: 1.6;
+}
+
+.splash-line.show {
+    animation: lineReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes lineReveal {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.s-prompt {
+    color: #818cf8;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    background: rgba(129, 140, 248, 0.08);
+    border: 1px solid rgba(129, 140, 248, 0.15);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    flex-shrink: 0;
+    min-width: 44px;
+    text-align: center;
+}
+
+.s-text {
+    color: #71717a;
+    font-size: 0.78rem;
+}
+
+.s-ok {
+    color: #34d399;
+    font-weight: 600;
+}
+
+.s-highlight {
+    color: #a78bfa;
+}
+
+/* INITIALIZE Button */
+.splash-btn {
+    position: relative;
+    background: transparent;
+    border: 1px solid rgba(129, 140, 248, 0.3);
+    border-radius: 12px;
+    padding: 0.9rem 2.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.splash-btn.show {
+    animation: btnReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes btnReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.splash-btn-text {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #818cf8;
+    transition: color 0.3s;
+}
+
+.splash-btn-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(167, 139, 250, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s;
+    border-radius: 12px;
+}
+
+.splash-btn:hover {
+    border-color: rgba(129, 140, 248, 0.6);
+    box-shadow: 0 0 30px rgba(129, 140, 248, 0.2),
+                0 0 60px rgba(129, 140, 248, 0.1),
+                inset 0 0 20px rgba(129, 140, 248, 0.05);
+    transform: translateY(-2px);
+}
+
+.splash-btn:hover .splash-btn-glow {
+    opacity: 1;
+}
+
+.splash-btn:hover .splash-btn-text {
+    color: #fff;
+}
+
+.splash-btn:active {
+    transform: scale(0.97);
+}
+
+/* Subtle breathing border animation on button */
+.splash-btn.show {
+    animation: btnReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+               btnBreath 3s ease-in-out 1.5s infinite;
+}
+
+@keyframes btnBreath {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(129, 140, 248, 0.05);
+        border-color: rgba(129, 140, 248, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(129, 140, 248, 0.15);
+        border-color: rgba(129, 140, 248, 0.5);
+    }
+}
+
+@media (max-width: 480px) {
+    .splash-hex {
+        width: 75px;
+        height: 90px;
+    }
+    .splash-terminal {
+        gap: 0.4rem;
+    }
+    .splash-line {
+        font-size: 0.72rem;
+    }
+    .s-prompt {
+        font-size: 0.62rem;
+        min-width: 38px;
+    }
+    .s-text {
+        font-size: 0.68rem;
+    }
+    .splash-btn {
+        padding: 0.75rem 2rem;
+    }
+    .splash-btn-text {
+        font-size: 0.78rem;
+    }
+}
+
 :root {
     --bg: #050508;
     --bg-alt: #0a0a10;
