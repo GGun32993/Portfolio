@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Typewriter: type only the text part ---
-    function typewriterLine(lineEl) {
+    function typewriterLine(lineEl, isLast = false) {
         return new Promise(resolve => {
             const text = lineEl.dataset.text;
             const suffix = lineEl.dataset.suffix || '';
@@ -83,7 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         suffixSpan.textContent = suffix;
                         textSpan.appendChild(suffixSpan);
                     }
-                    cursor.classList.add('done');
+                    if (!isLast) {
+                        cursor.classList.add('done');
+                    }
                     resolve();
                 }
             }
@@ -93,9 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Run boot lines sequentially with a small pause between each
     async function runBootSequence() {
-        for (const line of lines) {
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            const isLast = (i === lines.length - 1);
             await new Promise(r => setTimeout(r, 200));
-            await typewriterLine(line);
+            await typewriterLine(line, isLast);
         }
         setTimeout(() => {
             splashBtn.classList.add('show');
