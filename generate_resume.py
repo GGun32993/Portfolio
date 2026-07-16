@@ -279,7 +279,7 @@ def build_pdf():
             Paragraph("&bull; <b>Networking & Protocols:</b> Cisco Routers & Switches, Cisco IOS, IPv4/IPv6 Subnetting, TCP/IP &amp; NAT/Routing, WireGuard VPN, DNS/DHCP, Wireless Access", body_style)
         ],
         [
-            Paragraph("&bull; <b>Systems & Security:</b> Linux Server Admin, Active Directory &amp; GPO, Firewall (UFW &amp; iptables)", body_style)
+            Paragraph("&bull; <b>Systems & Security:</b> Linux Server Admin, Active Directory &amp; GPO, PC &amp; Laptop Hardware Support, Firewall (UFW &amp; iptables)", body_style)
         ],
         [
             Paragraph("&bull; <b>Tools & Automation:</b> Ansible (IaC), Vagrant, Docker, VirtualBox, Git, Python &amp; Bash Scripting", body_style)
