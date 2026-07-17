@@ -177,8 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentWord = 'System';
         while (true) {
             await scrambleText(roleWordEl, currentWord, 1200);
-            // Wait for 4 seconds before scrambling back
-            await new Promise(resolve => setTimeout(resolve, 4000));
+            // Wait for 2.5 seconds before scrambling back
+            await new Promise(resolve => setTimeout(resolve, 2500));
             currentWord = (currentWord === 'System') ? 'Network' : 'System';
         }
     }
