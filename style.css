@@ -838,6 +838,36 @@ strong {
     margin-bottom: 0.3rem;
 }
 
+/* Scramble/Glitch effect for Terminal Role */
+#terminal-role-word {
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+#terminal-role-word.scrambling {
+    color: var(--green);
+    text-shadow: 0 0 8px rgba(52, 211, 153, 0.6), 
+                 0 0 15px rgba(52, 211, 153, 0.4);
+    font-weight: 500;
+}
+
+#terminal-role-word.resolved {
+    color: var(--text);
+    animation: resolveGlow 1s ease-out;
+}
+
+@keyframes resolveGlow {
+    0% {
+        text-shadow: 0 0 12px var(--accent);
+        color: #fff;
+    }
+    100% {
+        text-shadow: none;
+        color: var(--text);
+    }
+}
+
+
 
 
 /* ==========================================
