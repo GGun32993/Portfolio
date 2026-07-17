@@ -121,58 +121,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Scramble/Glitch Text Effect for Terminal Role ---
     function scrambleText(element, targetWord, duration = 1200) {
-        const chars = '!@#$%^&*()_+-=[]{}|;:,./<>?010101XYZ';
-        const startWord = element.textContent;
-        const startLen = startWord.length;
-        const targetLen = targetWord.length;
-        const startTime = performance.now();
-        
-        element.classList.add('scrambling');
-        element.classList.remove('resolved');
+        return new Promise((resolve) => {
+            const chars = '!@#$%^&*()_+-=[]{}|;:,./<>?010101XYZ';
+            const startWord = element.textContent;
+            const startLen = startWord.length;
+            const targetLen = targetWord.length;
+            const startTime = performance.now();
+            
+            element.classList.add('scrambling');
+            element.classList.remove('resolved');
 
-        function update(now) {
-            const elapsed = now - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            const freezeCount = Math.floor(progress * targetLen);
-            const currentLen = Math.round(startLen + (targetLen - startLen) * progress);
-            
-            let result = '';
-            for (let i = 0; i < currentLen; i++) {
-                if (i < freezeCount) {
-                    result += targetWord[i];
-                } else if (i < targetLen) {
-                    result += chars[Math.floor(Math.random() * chars.length)];
-                } else {
-                    if (Math.random() > progress) {
+            function update(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                const freezeCount = Math.floor(progress * targetLen);
+                const currentLen = Math.round(startLen + (targetLen - startLen) * progress);
+                
+                let result = '';
+                for (let i = 0; i < currentLen; i++) {
+                    if (i < freezeCount) {
+                        result += targetWord[i];
+                    } else if (i < targetLen) {
                         result += chars[Math.floor(Math.random() * chars.length)];
+                    } else {
+                        if (Math.random() > progress) {
+                            result += chars[Math.floor(Math.random() * chars.length)];
+                        }
                     }
+                }
+                
+                element.textContent = result;
+                
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = targetWord;
+                    element.classList.remove('scrambling');
+                    element.classList.add('resolved');
+                    resolve();
                 }
             }
             
-            element.textContent = result;
-            
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            } else {
-                element.textContent = targetWord;
-                element.classList.remove('scrambling');
-                element.classList.add('resolved');
-            }
-        }
-        
-        requestAnimationFrame(update);
+            requestAnimationFrame(update);
+        });
     }
 
-    function startRoleScramble() {
+    async function startRoleScramble() {
         const roleWordEl = document.getElementById('terminal-role-word');
-        if (roleWordEl) {
-            // Start the scramble after 300ms delay to align with the terminal's fade-in animation
-            setTimeout(() => {
-                scrambleText(roleWordEl, 'System', 1200);
-            }, 300);
+        if (!roleWordEl) return;
+
+        // Start the scramble after 300ms delay to align with the terminal's fade-in animation
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        let currentWord = 'System';
+        while (true) {
+            await scrambleText(roleWordEl, currentWord, 1200);
+            // Wait for 4 seconds before scrambling back
+            await new Promise(resolve => setTimeout(resolve, 4000));
+            currentWord = (currentWord === 'System') ? 'Network' : 'System';
         }
     }
+
 
 
 
