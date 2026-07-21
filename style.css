@@ -56,7 +56,7 @@ body.splash-active {
     position: absolute;
     width: 2px;
     height: 2px;
-    background: rgba(129, 140, 248, 0.4);
+    background: rgba(251, 191, 36, 0.4);
     border-radius: 50%;
     animation: particleFloat linear infinite;
 }
@@ -118,7 +118,7 @@ body.splash-active {
     font-family: 'JetBrains Mono', monospace;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    color: #818cf8;
+    color: #fbbf24;
     animation: logoPulse 3s ease-in-out infinite;
 }
 
@@ -126,7 +126,7 @@ body.splash-active {
     font-family: 'JetBrains Mono', monospace;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
-    background: linear-gradient(135deg, #fff 0%, #a78bfa 50%, #818cf8 100%);
+    background: linear-gradient(135deg, #fff 0%, #f59e0b 50%, #fbbf24 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -134,8 +134,8 @@ body.splash-active {
 }
 
 @keyframes logoPulse {
-    0%, 100% { text-shadow: 0 0 10px rgba(129, 140, 248, 0.3); }
-    50% { text-shadow: 0 0 25px rgba(129, 140, 248, 0.6); }
+    0%, 100% { text-shadow: 0 0 10px rgba(251, 191, 36, 0.3); }
+    50% { text-shadow: 0 0 25px rgba(251, 191, 36, 0.6); }
 }
 
 /* Boot sequence terminal */
@@ -161,7 +161,7 @@ body.splash-active {
     display: inline-block;
     width: 7px;
     height: 1em;
-    background: #818cf8;
+    background: #fbbf24;
     margin-left: 1px;
     animation: splashCursorBlink 0.6s step-end infinite;
     vertical-align: text-bottom;
@@ -177,12 +177,12 @@ body.splash-active {
 }
 
 .s-prompt {
-    color: #818cf8;
+    color: #fbbf24;
     font-weight: 700;
     font-size: 0.7rem;
     letter-spacing: 0.08em;
-    background: rgba(129, 140, 248, 0.08);
-    border: 1px solid rgba(129, 140, 248, 0.15);
+    background: rgba(251, 191, 36, 0.08);
+    border: 1px solid rgba(251, 191, 36, 0.15);
     padding: 0.15rem 0.5rem;
     border-radius: 4px;
     flex-shrink: 0;
@@ -201,14 +201,14 @@ body.splash-active {
 }
 
 .s-highlight {
-    color: #a78bfa;
+    color: #f59e0b;
 }
 
 /* INITIALIZE Button */
 .splash-btn {
     position: relative;
     background: transparent;
-    border: 1px solid rgba(129, 140, 248, 0.3);
+    border: 1px solid rgba(251, 191, 36, 0.3);
     border-radius: 12px;
     padding: 0.9rem 2.5rem;
     cursor: pointer;
@@ -242,24 +242,24 @@ body.splash-active {
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.15em;
-    color: #818cf8;
+    color: #fbbf24;
     transition: color 0.3s;
 }
 
 .splash-btn-glow {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(129, 140, 248, 0.15), rgba(167, 139, 250, 0.1));
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.1));
     opacity: 0;
     transition: opacity 0.4s;
     border-radius: 12px;
 }
 
 .splash-btn:hover {
-    border-color: rgba(129, 140, 248, 0.6);
-    box-shadow: 0 0 30px rgba(129, 140, 248, 0.2),
-                0 0 60px rgba(129, 140, 248, 0.1),
-                inset 0 0 20px rgba(129, 140, 248, 0.05);
+    border-color: rgba(251, 191, 36, 0.6);
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.2),
+                0 0 60px rgba(251, 191, 36, 0.1),
+                inset 0 0 20px rgba(251, 191, 36, 0.05);
     transform: translateY(-2px);
 }
 
@@ -283,12 +283,12 @@ body.splash-active {
 
 @keyframes btnBreath {
     0%, 100% {
-        box-shadow: 0 0 10px rgba(129, 140, 248, 0.05);
-        border-color: rgba(129, 140, 248, 0.3);
+        box-shadow: 0 0 10px rgba(251, 191, 36, 0.05);
+        border-color: rgba(251, 191, 36, 0.3);
     }
     50% {
-        box-shadow: 0 0 25px rgba(129, 140, 248, 0.15);
-        border-color: rgba(129, 140, 248, 0.5);
+        box-shadow: 0 0 25px rgba(251, 191, 36, 0.15);
+        border-color: rgba(251, 191, 36, 0.5);
     }
 }
 
@@ -328,12 +328,11 @@ body.splash-active {
     --text: #e4e4e7;
     --text-secondary: #a1a1aa;
     --text-muted: #52525b;
-    --accent: #818cf8;
-    --accent-glow: rgba(129, 140, 248, 0.08);
-    --accent-2: #a78bfa;
+    --accent: #fbbf24;
+    --accent-glow: rgba(251, 191, 36, 0.08);
+    --accent-2: #f59e0b;
     --green: #34d399;
     --green-glow: rgba(52, 211, 153, 0.2);
-    --amber: #fbbf24;
     --radius: 16px;
     --radius-sm: 10px;
     --radius-xs: 6px;
@@ -447,7 +446,7 @@ strong {
     position: absolute;
     width: 2px;
     height: 2px;
-    background: rgba(129, 140, 248, 0.25);
+    background: rgba(251, 191, 36, 0.25);
     border-radius: 50%;
     animation: portfolioParticleFloat linear infinite;
 }
@@ -754,8 +753,8 @@ strong {
 }
 
 .btn-primary:hover {
-    background: #6366f1;
-    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+    background: #d97706;
+    box-shadow: 0 0 30px rgba(217, 119, 6, 0.3);
     transform: translateY(-2px);
 }
 
@@ -1068,7 +1067,7 @@ strong {
     background: rgba(251, 191, 36, 0.06);
     border: 1px solid rgba(251, 191, 36, 0.2);
     border-radius: var(--radius-sm);
-    color: var(--amber);
+    color: var(--accent);
 }
 
 .edu-info {
@@ -1087,7 +1086,7 @@ strong {
 .edu-degree {
     font-size: 0.82rem;
     font-weight: 600;
-    color: var(--amber);
+    color: var(--accent);
 }
 
 .edu-major {
@@ -1146,7 +1145,7 @@ strong {
     font-family: var(--font-mono);
     font-size: 0.78rem;
     font-weight: 700;
-    color: var(--amber);
+    color: var(--accent);
     letter-spacing: 0.05em;
 }
 
@@ -1219,7 +1218,7 @@ strong {
     background: rgba(251, 191, 36, 0.06);
     border: 1px solid rgba(251, 191, 36, 0.2);
     border-radius: var(--radius-sm);
-    color: var(--amber);
+    color: var(--accent);
 }
 
 .cert-info {
@@ -1238,7 +1237,7 @@ strong {
 .cert-issuer {
     font-size: 0.82rem;
     font-weight: 600;
-    color: var(--amber);
+    color: var(--accent);
 }
 
 .cert-date {
@@ -1250,7 +1249,7 @@ strong {
 
 .cert-link {
     font-size: 0.72rem;
-    color: var(--amber);
+    color: var(--accent);
     margin-top: 0.35rem;
     display: inline-flex;
     align-items: center;
@@ -1358,7 +1357,7 @@ strong {
 .project-card-tag {
     font-family: var(--font-mono);
     font-size: 0.68rem;
-    color: var(--amber);
+    color: var(--accent);
     background: rgba(245, 158, 11, 0.06);
     border: 1px solid rgba(245, 158, 11, 0.12);
     padding: 0.2rem 0.55rem;
