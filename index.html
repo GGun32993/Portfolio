@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guntinan Penmongkon | System & Network Engineer</title>
+    <meta name="description"
+        content="Portfolio ของ Guntinan Penmongkon — System & Network Engineer ผู้เชี่ยวชาญด้าน Infrastructure as Code, Network Security และ Automation">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ============ SPLASH / COVER SCREEN ============ -->
+    <div class="splash" id="splash">
+        <!-- Scanline overlay -->
+        <div class="splash-scanline"></div>
+        <!-- Floating particles -->
+        <div class="splash-particles" id="splashParticles"></div>
+
+        <div class="splash-content">
+            <!-- Logo -->
+            <div class="splash-logo" id="splashLogo">
+                <span class="splash-logo-bracket">{</span>
+                <span class="splash-logo-text">Portfolio</span>
+                <span class="splash-logo-bracket">}</span>
+            </div>
+
+            <!-- Boot sequence terminal -->
+            <div class="splash-terminal" id="splashTerminal">
+                <div class="splash-line" data-delay="300" data-prompt="BIOS" data-text="System check... "
+                    data-suffix="OK" data-suffix-class="s-ok"></div>
+                <div class="splash-line" data-delay="1200" data-prompt="BOOT" data-text="Loading kernel modules... "
+                    data-suffix="OK" data-suffix-class="s-ok"></div>
+                <div class="splash-line" data-delay="2100" data-prompt="NET"
+                    data-text="Initializing network interfaces... " data-suffix="OK" data-suffix-class="s-ok"></div>
+                <div class="splash-line" data-delay="3200" data-prompt="AUTH"
+                    data-text="Authenticating user guest@portfolio... " data-suffix="GRANTED" data-suffix-class="s-ok">
+                </div>
+                <div class="splash-line" data-delay="4400" data-prompt="SYS"
+                    data-text="All services operational. Welcome."></div>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="splash-btn" id="splashBtn" aria-label="Enter portfolio">
+                <span class="splash-btn-text">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 10 4 15 9 20"></polyline>
+                        <path d="M20 4v7a4 4 0 0 1-4 4H4"></path>
+                    </svg>
+                    INITIALIZE
+                </span>
+                <span class="splash-btn-glow"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Dot Grid Background -->
+    <div class="dot-grid"></div>
+
+    <!-- Portfolio Particles -->
+    <div class="portfolio-particles" id="portfolioParticles"></div>
+
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">{</span>
+                <span class="logo-text">Portfolio</span>
+                <span class="logo-bracket">}</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link" data-text="เกี่ยวกับ">เกี่ยวกับ</a>
+                <a href="#projects" class="nav-link" data-text="โปรเจกต์">โปรเจกต์</a>
+                <a href="#skills" class="nav-link" data-text="ทักษะ">ทักษะ</a>
+                <a href="#certificates" class="nav-link" data-text="เกียรติบัตร">เกียรติบัตร</a>
+                <a href="#education" class="nav-link" data-text="การศึกษา">การศึกษา</a>
+                <a href="#contact" class="nav-link" data-text="ติดต่อ">ติดต่อ</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mobile-link">เกี่ยวกับ</a>
+        <a href="#projects" class="mobile-link">โปรเจกต์</a>
+        <a href="#skills" class="mobile-link">ทักษะ</a>
+        <a href="#certificates" class="mobile-link">เกียรติบัตร</a>
+        <a href="#education" class="mobile-link">การศึกษา</a>
+        <a href="#contact" class="mobile-link">ติดต่อ</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge animate-in">
+                <span class="status-dot"></span>
+                <span class="font-mono text-xs">AVAILABLE FOR WORK</span>
+            </div>
+            <h1 class="hero-title animate-in" style="animation-delay: 0.1s">
+                <span class="hero-greeting">สวัสดีครับ, ผมชื่อกันตินันท์ เพ็ญมงคล</span>
+                <span class="hero-name">Guntinan Penmongkon</span>
+            </h1>
+            <p class="hero-role animate-in" style="animation-delay: 0.2s">
+                <span class="typed-text" id="typedText"></span>
+                <span class="cursor-blink">|</span>
+            </p>
+            <p class="hero-desc animate-in" style="animation-delay: 0.3s">
+                นักศึกษาหลักสูตรวิทยาการคอมพิวเตอร์ มหาวิทยาลัยสวนดุสิต<br>
+                มุ่งเน้นการออกแบบสถาปัตยกรรมเครือข่าย (Network Architecture)<br>
+                และความปลอดภัยของระบบสารสนเทศ (Information Security)<br>
+                เพื่อสร้างระบบที่มีความมั่นคงและมีประสิทธิภาพ
+            </p>
+            <div class="hero-actions animate-in" style="animation-delay: 0.4s">
+                <a href="#projects" class="btn btn-primary">
+                    <span>ดูผลงาน</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17" />
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost">
+                    <span>Contact Me</span>
+                </a>
+            </div>
+            <div class="hero-terminal animate-in" style="animation-delay: 0.5s">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="terminal-title">terminal</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-cmd">neofetch</span>
+                    </div>
+                    <div class="terminal-output" style="margin-top: 0.5rem;">
+                        <span style="color: var(--accent);">gun</span><span
+                            style="color: var(--text-muted);">@</span><span
+                            style="color: var(--green);">portfolio</span><br>
+                        <span style="color: var(--text-muted);">──────────────</span><br>
+                        <span style="color: var(--accent);">Name</span><span style="color: var(--text-muted);">:</span>
+                        Guntinan Penmongkon<br>
+                        <span style="color: var(--accent);">Role</span><span style="color: var(--text-muted);">:</span>
+                        <span id="terminal-role-word">Network</span> Engineer &amp; IT Support<br>
+                        <span style="color: var(--accent);">Univ</span><span style="color: var(--text-muted);">:</span>
+                        Computer Science @Suan Dusit University<br>
+                        <span style="color: var(--accent);">Skills</span><span
+                            style="color: var(--text-muted);">:</span> Vagrant, Ansible, WireGuard<br>
+                        <span style="color: var(--accent);">Infra</span><span style="color: var(--text-muted);">:</span>
+                        Linux, Nginx, PostgreSQL<br>
+                        <span style="color: var(--accent);">Status</span><span
+                            style="color: var(--text-muted);">:</span> <span style="color: #10b981;">AVAILABLE FOR WORK
+                            ✓</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">01 // ABOUT</span>
+                <h2 class="section-title">เกี่ยวกับผม</h2>
+            </div>
+            <div class="about-grid">
+                <!-- Profile Image -->
+                <div class="about-image-wrapper reveal">
+                    <img src="profile.webp" alt="Guntinan Penmongkon" class="about-img" width="600" height="800"
+                        loading="lazy">
+                </div>
+
+                <!-- Right: Content & Dashboard -->
+                <div class="about-content reveal" style="animation-delay: 0.1s">
+                    <div class="about-text">
+                        <p>
+                            ผมชื่อ <strong>กันตินันท์ เพ็ญมงคล</strong> กำลังศึกษาระดับปริญญาตรี
+                            สาขา<strong>วิทยาการคอมพิวเตอร์</strong> มหาวิทยาลัยสวนดุสิต
+                            มีความสนใจเป็นพิเศษในด้านระบบเครือข่ายคอมพิวเตอร์และการบริหารจัดการระบบสารสนเทศ
+                            พร้อมมุ่งมั่นพัฒนาความรู้ทั้งภาคทฤษฎีและภาคปฏิบัติอย่างต่อเนื่อง
+                            เพื่อเตรียมความพร้อมสู่การเป็นบุคลากรด้านเทคโนโลยีสารสนเทศที่มีความสามารถและพร้อมรับผิดชอบต่อการทำงานในสภาพแวดล้อมระดับมืออาชีพ
+                        </p>
+                        <p>
+                            ผมมีเป้าหมายในการพัฒนาตนเองสู่สายงาน <strong>Network Engineer</strong> หรือ <strong>System
+                                Engineer</strong> โดยมุ่งเน้นการออกแบบ ติดตั้ง บริหารจัดการ
+                            และบำรุงรักษาระบบเครือข่ายและระบบเซิร์ฟเวอร์ให้มีประสิทธิภาพ ความมั่นคงปลอดภัย
+                            และความพร้อมในการให้บริการอยู่เสมอ พร้อมเปิดรับการเรียนรู้เทคโนโลยี มาตรฐาน
+                            และแนวปฏิบัติใหม่ ๆ เพื่อยกระดับศักยภาพของตนเองและสร้างคุณค่าให้กับองค์กรในระยะยาว
+                        </p>
+                    </div>
+
+                    <!-- System Status Dashboard -->
+                    <div class="about-dashboard">
+                        <!-- Card 1 -->
+                        <div class="dash-card">
+                            <div class="dash-header">
+                                <span class="dash-dot green"></span>
+                                <span class="dash-title font-mono">LOCAL_LAB</span>
+                            </div>
+                            <div class="dash-body font-mono">
+                                <div class="dash-line"><span class="dash-label">Virtualization:</span> VirtualBox &
+                                    Vagrant</div>
+                                <div class="dash-line"><span class="dash-label">OS & IaC:</span> Ubuntu & Ansible</div>
+                                <div class="dash-line"><span class="dash-label">Monitoring:</span> Prometheus & Grafana
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="dash-card">
+                            <div class="dash-header">
+                                <span class="dash-dot green"></span>
+                                <span class="dash-title font-mono">DAILY_TOOLS</span>
+                            </div>
+                            <div class="dash-body font-mono">
+                                <div class="dash-line"><span class="dash-label">Scripting:</span> Bash, Python &
+                                    PowerShell</div>
+                                <div class="dash-line"><span class="dash-label">VCS & Editor:</span> Git, GitHub & VS
+                                    Code</div>
+                                <div class="dash-line"><span class="dash-label">Backup/Sync:</span> Restic, Rclone &
+                                    GDrive</div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="dash-card">
+                            <div class="dash-header">
+                                <span class="dash-dot green"></span>
+                                <span class="dash-title font-mono">NET_SETUP</span>
+                            </div>
+                            <div class="dash-body font-mono">
+                                <div class="dash-line"><span class="dash-label">VPN Tunnel:</span> WireGuard VPN</div>
+                                <div class="dash-line"><span class="dash-label">Security:</span> Cisco IOS & UFW
+                                    Firewall</div>
+                                <div class="dash-line"><span class="dash-label">DNS Server:</span> AdGuard Home DNS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section section-alt" id="projects">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">02 // PROJECTS</span>
+                <h2 class="section-title">โปรเจกต์</h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card reveal">
+                    <div class="project-card-image-wrapper">
+                        <div class="project-card-header-bg">
+                            <svg class="project-card-github-logo" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            <span class="project-card-github-title">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Multi-Branch Network Lab</h3>
+                        <p class="project-card-desc">
+                            โปรเจกต์จำลองระบบเครือข่ายองค์กร 3 สาขาบน Cisco Packet Tracer ครอบคลุมการแบ่ง VLAN,
+                            Inter-VLAN Routing, OSPF Dynamic Routing, NAT/PAT, Centralized DHCP Relay,
+                            Intranet Web/DNS Server และนโยบายความปลอดภัยแบบ Zero-Trust ด้วย Extended ACL
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Cisco Packet Tracer</span>
+                            <span class="project-card-tag">VLAN</span>
+                            <span class="project-card-tag">OSPF</span>
+                            <span class="project-card-tag">NAT/PAT</span>
+                            <span class="project-card-tag">DHCP Relay</span>
+                            <span class="project-card-tag">ACL</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/GGun32993/multi-branch-network-lab" target="_blank"
+                                class="project-card-link">
+                                <span>View Project</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal" style="animation-delay: 0.1s">
+                    <div class="project-card-image-wrapper">
+                        <div class="project-card-header-bg">
+                            <svg class="project-card-github-logo" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            <span class="project-card-github-title">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Secure Hybrid Infrastructure IaC</h3>
+                        <p class="project-card-desc">
+                            ระบบโครงสร้างพื้นฐานเครือข่ายความปลอดภัยสูงจำลอง 3 เซิร์ฟเวอร์ภายใน
+                            สร้างคอนฟิกอัตโนมัติด้วยโค้ด (IaC) พร้อมระบบมอนิเตอร์ด้วย Prometheus และ Grafana
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Vagrant</span>
+                            <span class="project-card-tag">Ansible</span>
+                            <span class="project-card-tag">WireGuard</span>
+                            <span class="project-card-tag">Prometheus</span>
+                            <span class="project-card-tag">Grafana</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/ggun32993/Secure-Hybrid-Infrastructure-IaC" target="_blank"
+                                class="project-card-link">
+                                <span>View Project</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal" style="animation-delay: 0.2s">
+                    <div class="project-card-image-wrapper">
+                        <div class="project-card-header-bg">
+                            <svg class="project-card-github-logo" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            <span class="project-card-github-title">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Freelance Matching Online</h3>
+                        <p class="project-card-desc">
+                            แพลตฟอร์มหางานและจ้างงานสำหรับฟรีแลนซ์ ประมวลผลฝั่งเซิร์ฟเวอร์ด้วย PHP ค้นหาพิกัดด้วย
+                            Leaflet และ Longdo Map API
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">PHP</span>
+                            <span class="project-card-tag">MySQL</span>
+                            <span class="project-card-tag">Leaflet Map</span>
+                            <span class="project-card-tag">Longdo Map API</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/ggun32993/JobFind_Project" target="_blank"
+                                class="project-card-link">
+                                <span>View Code</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                            <a href="https://jobfindprojectggun.42web.io/" target="_blank" class="project-card-link">
+                                <span>Live Demo</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal" style="animation-delay: 0.3s">
+                    <div class="project-card-image-wrapper">
+                        <div class="project-card-header-bg">
+                            <svg class="project-card-github-logo" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            <span class="project-card-github-title">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Automated Backup System</h3>
+                        <p class="project-card-desc">
+                            ระบบสำรองข้อมูลอัตโนมัติความปลอดภัยสูงสำหรับ Home Lab โดยใช้ Ansible สั่งงาน Restic และ
+                            Rclone ในการเข้ารหัสข้อมูลสำคัญ เช่น Docker volumes, Configs และ PostgreSQL/SQLite
+                            ไปเก็บไว้บน Google Drive พร้อมระบบแจ้งเตือนผ่าน Discord Webhook
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Ansible</span>
+                            <span class="project-card-tag">Restic</span>
+                            <span class="project-card-tag">Rclone</span>
+                            <span class="project-card-tag">Google Drive</span>
+                            <span class="project-card-tag">Discord Webhook</span>
+                            <span class="project-card-tag">Bash</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/ggun32993/automated-backup-system" target="_blank"
+                                class="project-card-link">
+                                <span>View Project</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card reveal" style="animation-delay: 0.4s">
+                    <div class="project-card-image-wrapper">
+                        <div class="project-card-header-bg">
+                            <svg class="project-card-github-logo" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                            </svg>
+                            <span class="project-card-github-title">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">HR Intelligent RAG Chatbot</h3>
+                        <p class="project-card-desc">
+                            ระบบ RAG Chatbot สำหรับฝ่ายบุคคล (HR) เพื่อสืบค้นข้อมูลและตอบคำถามจากนโยบายบริษัท พัฒนาด้วย
+                            Python, Streamlit, ChromaDB และ Gemini API
+                            โดยจำกัดขอบเขตการตอบให้อยู่ภายใต้ข้อมูลจริงในคู่มือบริษัทเพื่อป้องกันข้อมูลเท็จ
+                            (Hallucination)
+                        </p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">Python</span>
+                            <span class="project-card-tag">Streamlit</span>
+                            <span class="project-card-tag">ChromaDB</span>
+                            <span class="project-card-tag">Gemini API</span>
+                            <span class="project-card-tag">RAG</span>
+                            <span class="project-card-tag">Vector DB</span>
+                        </div>
+                        <div class="project-card-footer">
+                            <a href="https://github.com/GGun32993/RAG-Chatbot-MVP" target="_blank"
+                                class="project-card-link">
+                                <span>View Project</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">03 // SKILLS</span>
+                <h2 class="section-title">ทักษะและเทคโนโลยี</h2>
+            </div>
+            <div class="skills-grid">
+                <!-- 1. Network Engineer -->
+                <div class="skill-group reveal">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="16" y="16" width="6" height="6" rx="1"></rect>
+                                <rect x="2" y="16" width="6" height="6" rx="1"></rect>
+                                <rect x="9" y="2" width="6" height="6" rx="1"></rect>
+                                <path d="M12 8v8m-7 0v-5h14v5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-group-title">NETWORK ENGINEER</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">Cisco Routers &amp; Switches</span>
+                        <span class="skill-tag-pill">Cisco IOS</span>
+                        <span class="skill-tag-pill">GNS3</span>
+                        <span class="skill-tag-pill">Wireshark</span>
+                        <span class="skill-tag-pill">IPv4 / IPv6 Subnetting</span>
+                        <span class="skill-tag-pill">Network Troubleshooting</span>
+                        <span class="skill-tag-pill">TCP/IP &amp; NAT/Routing</span>
+                        <span class="skill-tag-pill">WireGuard VPN</span>
+                        <span class="skill-tag-pill">DNS / DHCP Services</span>
+                        <span class="skill-tag-pill">Firewall (UFW &amp; iptables)</span>
+                        <span class="skill-tag-pill">Wireless Access</span>
+                    </div>
+                </div>
+
+                <!-- 2. System Engineer -->
+                <div class="skill-group reveal" style="animation-delay: 0.1s">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                                <rect x="9" y="9" width="6" height="6"></rect>
+                                <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-group-title">SYSTEM ENGINEER</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">Linux Server Administration</span>
+                        <span class="skill-tag-pill">Vagrant</span>
+                        <span class="skill-tag-pill">Ansible (IaC)</span>
+                        <span class="skill-tag-pill">Docker</span>
+                        <span class="skill-tag-pill">VirtualBox</span>
+                        <span class="skill-tag-pill">Python & Bash Scripting</span>
+                        <span class="skill-tag-pill">PostgreSQL / MySQL</span>
+                    </div>
+                </div>
+
+                <!-- 3. IT Admin & Support -->
+                <div class="skill-group reveal" style="animation-delay: 0.2s">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-group-title">IT ADMIN & SUPPORT</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">Active Directory &amp; GPO</span>
+                        <span class="skill-tag-pill">M365 &amp; Google Workspace</span>
+                        <span class="skill-tag-pill">IT Helpdesk &amp; Ticket Support</span>
+                        <span class="skill-tag-pill">User &amp; Endpoint Support</span>
+                        <span class="skill-tag-pill">OS Deployment &amp; PC Maintenance</span>
+                        <span class="skill-tag-pill">Hardware Troubleshooting</span>
+                        <span class="skill-tag-pill">Copper &amp; Fiber Cabling</span>
+                    </div>
+                </div>
+
+                <!-- 4. Web Development -->
+                <div class="skill-group reveal" style="animation-delay: 0.3s">
+                    <div class="skill-group-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="skill-group-title">WEB DEVELOPMENT</h3>
+                    </div>
+                    <div class="skill-tags-wrapper">
+                        <span class="skill-tag-pill">HTML5 / CSS3</span>
+                        <span class="skill-tag-pill">JavaScript (ES6+)</span>
+                        <span class="skill-tag-pill">PHP</span>
+                        <span class="skill-tag-pill">MySQL</span>
+                        <span class="skill-tag-pill">Bootstrap</span>
+                        <span class="skill-tag-pill">Leaflet Map API</span>
+                        <span class="skill-tag-pill">Longdo Map API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="section section-alt" id="certificates">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">04 // CERTIFICATES</span>
+                <h2 class="section-title">ใบรับรองและเกียรติบัตร</h2>
+            </div>
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="cert-card reveal">
+                    <div class="cert-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Networking Basics</h3>
+                        <span class="cert-issuer">Cisco Networking Academy</span>
+                        <span class="cert-date">ได้รับเมื่อ: 2026</span>
+                        <!-- ใส่ลิงก์ยืนยันใบรับรองที่ช่อง href -->
+                        <a href="https://www.credly.com/badges/30c4190e-e0db-4343-bf68-3305225ff227/public_url"
+                            target="_blank" class="cert-link">
+                            <span>Verify Credential</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Certificate 2 -->
+                <div class="cert-card reveal" style="animation-delay: 0.1s">
+                    <div class="cert-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Networking Devices and Initial Configuration</h3>
+                        <span class="cert-issuer">Cisco Networking Academy</span>
+                        <span class="cert-date">ได้รับเมื่อ: 2026</span>
+                        <a href="https://www.credly.com/badges/466f8400-f201-4ea1-95c7-69b56a1accec/public_url"
+                            target="_blank" class="cert-link">
+                            <span>Verify Credential</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Certificate 3 -->
+                <div class="cert-card reveal" style="animation-delay: 0.2s">
+                    <div class="cert-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Network Addressing and Basic Troubleshooting</h3>
+                        <span class="cert-issuer">Cisco Networking Academy</span>
+                        <span class="cert-date">ได้รับเมื่อ: 2026</span>
+                        <a href="https://www.credly.com/badges/cc043d0b-f8b1-4eb5-8137-8c3478f8489b/public_url"
+                            target="_blank" class="cert-link">
+                            <span>Verify Credential</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Certificate 4 -->
+                <div class="cert-card reveal" style="animation-delay: 0.3s">
+                    <div class="cert-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="7"></circle>
+                            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">Network Support and Security</h3>
+                        <span class="cert-issuer">Cisco Networking Academy</span>
+                        <span class="cert-date">ได้รับเมื่อ: 2026</span>
+                        <a href="https://www.credly.com/badges/b08146aa-cc19-4607-b652-2f654b96d75c/public_url"
+                            target="_blank" class="cert-link">
+                            <span>Verify Credential</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Certificate 5 -->
+                <div class="cert-card reveal" style="animation-delay: 0.4s">
+                    <div class="cert-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                        </svg>
+                    </div>
+                    <div class="cert-info">
+                        <h3 class="cert-name">กำลังอัปโหลดข้อมูลเพิ่มเติม...</h3>
+                        <span class="cert-issuer">คอยติดตามความคืบหน้า</span>
+                        <span class="cert-date">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">05 // EDUCATION</span>
+                <h2 class="section-title">ประวัติการศึกษา</h2>
+            </div>
+            <div class="edu-grid">
+                <!-- University -->
+                <div class="edu-card reveal">
+                    <div class="edu-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                        </svg>
+                    </div>
+                    <div class="edu-info">
+                        <h3 class="edu-school">มหาวิทยาลัยสวนดุสิต</h3>
+                        <span class="edu-degree">Science And Technology</span>
+                        <span class="edu-major">Major: Computer Science</span>
+                        <span class="edu-years">2022 - Present</span>
+                    </div>
+                </div>
+                <!-- High School -->
+                <div class="edu-card reveal" style="animation-delay: 0.1s">
+                    <div class="edu-icon-box">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                        </svg>
+                    </div>
+                    <div class="edu-info">
+                        <h3 class="edu-school">โรงเรียนสุราษฎร์พิทยา</h3>
+                        <span class="edu-degree">High School</span>
+                        <span class="edu-major">Mathematics - English Program</span>
+                        <span class="edu-years">2016 - 2022</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-alt" id="contact">
+        <div class="section-inner">
+            <div class="section-header reveal">
+                <span class="section-tag font-mono">06 // CONTACT</span>
+                <h2 class="section-title">ติดต่อ</h2>
+            </div>
+            <div class="contact-content reveal">
+                <p class="contact-desc">
+                    หากคุณกำลังมองหาผู้ร่วมงานที่มีความมุ่งมั่น หรือต้องการหารือเกี่ยวกับงานด้านระบบเครือข่าย
+                    (Networking),
+                    การดูแลระบบเซิร์ฟเวอร์ (System Engineering), การสนับสนุนระบบ IT (IT Support)
+                    สามารถติดต่อได้ตามช่องทางด้านล่าง
+                </p>
+                <div class="contact-cards">
+                    <!-- Email Card -->
+                    <a href="mailto:guntinan.penmongkon@gmail.com" class="contact-card"
+                        aria-label="ส่งอีเมลหา กันตินันท์ เพ็ญมงคล">
+                        <div class="contact-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-card-label">Email</div>
+                        <div class="contact-card-value font-mono">guntinan.penmongkon@gmail.com</div>
+                    </a>
+                    <!-- GitHub Card -->
+                    <a href="https://github.com/ggun32993" target="_blank" class="contact-card"
+                        aria-label="ดูโปรไฟล์ GitHub ของ กันตินันท์ เพ็ญมงคล">
+                        <div class="contact-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="contact-card-label">GitHub</div>
+                        <div class="contact-card-value font-mono">ggun32993</div>
+                    </a>
+                    <!-- Phone Card -->
+                    <a href="tel:0842568211" class="contact-card" aria-label="โทรติดต่อ กันตินันท์ เพ็ญมงคล">
+                        <div class="contact-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="contact-card-label">โทรศัพท์</div>
+                        <div class="contact-card-value font-mono">084-256-8211</div>
+                    </a>
+                    <!-- Resume Card -->
+                    <a href="resume.pdf" download="Resume_Guntinan.pdf" class="contact-card"
+                        aria-label="ดาวน์โหลด PDF Resume ของ กันตินันท์ เพ็ญมงคล">
+                        <div class="contact-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-card-label">Resume</div>
+                        <div class="contact-card-value font-mono">Download PDF</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-line"></div>
+            <div class="footer-content">
+                <span class="font-mono text-xs">ออกแบบและพัฒนาโดย <strong>Guntinan Penmongkon</strong></span>
+                <span class="font-mono text-xs" style="color: var(--text-muted);">
+                    สร้างด้วย <span style="color: var(--accent);">HTML</span> + <span
+                        style="color: var(--accent);">CSS</span> + <span style="color: var(--accent);">JS</span>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
